@@ -9,6 +9,7 @@
 ## 核心功能
 ### 1. 助记词生成
 工具使用BIP39标准生成12个单词的助记词：
+
 def generate_mnemonic():
     """生成助记词"""
     mnemo = Mnemonic("english")
@@ -16,6 +17,7 @@ def generate_mnemonic():
 
 ### 2. BASE链地址生成
 通过以太坊账户系统生成BASE链地址：
+
 def generate_base_address(mnemonic):
     """生成BASE链地址"""
     Account.enable_unaudited_hdwallet_features()
@@ -24,6 +26,7 @@ def generate_base_address(mnemonic):
 
 ### 3. 多线程钱包生成
 使用QThread实现高效的钱包生成：
+
 class WalletWorker(QThread):
     update_signal = pyqtSignal(str, str, int)  
     def run(self):
